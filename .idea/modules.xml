@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/kcm.iml" filepath="$PROJECT_DIR$/.idea/kcm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksoft-common/ksoft-common.iml" filepath="$PROJECT_DIR$/ksoft-common/ksoft-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksoft-service/ksoft-service.iml" filepath="$PROJECT_DIR$/ksoft-service/ksoft-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksoft-web/ksoft-web.iml" filepath="$PROJECT_DIR$/ksoft-web/ksoft-web.iml" />
+    </modules>
+  </component>
+</project>

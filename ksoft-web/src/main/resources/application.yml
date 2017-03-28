@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: dev
+---
+#development profile
+spring:
+  profiles: dev
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.1.10.75:3306/test
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+
+    hibernate:
+      ddl-auto: update
+#      naming:
+#        strategy: com.zcckj.rescue.entity.TableCreateStrategy
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    database: mysql
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+rescue:
+  dubbo:
+    app-name: highway-rescue-provider
+    group: dubbo
+    protocol-name: dubbo
+    owner: rescue
+    service-group: highway-rescue
+    zookeeper-address: zookeeper://127.0.0.1:2181
