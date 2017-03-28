@@ -24,11 +24,3 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-rescue:
-  dubbo:
-    app-name: highway-rescue-provider
-    group: dubbo
-    protocol-name: dubbo
-    owner: rescue
-    service-group: highway-rescue
-    zookeeper-address: zookeeper://127.0.0.1:2181
