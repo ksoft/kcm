@@ -19,7 +19,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+#      ddl-auto: update
 #      naming:
 #        strategy: com.zcckj.rescue.entity.TableCreateStrategy
       naming:

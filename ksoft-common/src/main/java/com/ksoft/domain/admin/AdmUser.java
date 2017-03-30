@@ -1,9 +1,8 @@
 package com.ksoft.domain.admin;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,6 +24,9 @@ public class AdmUser implements Serializable{
     private String user_name;
     @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "ROLE_CODE")
+    private String role_code;
 
+    @OneToMany(mappedBy = "role_code")
     private List<AdmRole> roles;
 }

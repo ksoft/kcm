@@ -1,7 +1,6 @@
 package com.ksoft.domain.admin;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,7 +14,7 @@ import java.io.Serializable;
 public class AdmRole implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     private int id;
 
     @Column(name = "ROLE_CODE")
