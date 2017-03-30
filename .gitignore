@@ -13,3 +13,5 @@ ksoft-service/target
 ksoft-common/*.iml
 ksoft-common/target
 /.idea
+/ksoft-common/target
+/ksoft-service/target
