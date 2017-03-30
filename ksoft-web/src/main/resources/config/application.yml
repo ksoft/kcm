@@ -8,7 +8,7 @@ spring:
   datasource:
     username: root
     password: 123456
-    url: jdbc:mysql://10.1.10.75:3306/test
+    url: jdbc:mysql://127.0.0.1:3306/ksoft
     driver-class-name: com.mysql.jdbc.Driver
 
   redis:
@@ -30,3 +30,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+
+  config-location: classpath:page-config.xml

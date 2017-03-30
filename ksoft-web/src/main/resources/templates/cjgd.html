@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/gdgl.css">
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<a href="" class="logo"><img src="../static/img/logo_1.png"></a>
+			<div class="menuDiv menuDiv_1">
+				<b></b>
+				<div class="menuDiv_1_div">
+					<p><img src="../static/img/gdgl.png" id="menuDiv_1_img"><b></b></p>
+					<span class="menuDiv_2_span">工单管理</span>
+				</div>
+			</div>
+			<div class="menuDiv menuDiv_2">
+				<b class="menuLine"></b>
+				<span class="menuDiv_2_span">创建工单</span>
+			</div>
+		</div>
+		<div class="right">
+			<div class="top">
+				<span class="signOut">退出</span>
+				<span class="myName">测试测试</span>
+				<img src="../static/img/default.jpg" class="myNamePic">
+				<div class="bell">
+					<span>12</span>
+				</div>
+				<span class="welcome">欢迎登录中策云 高速救援客服平台</span>
+			</div>
+			<div class="contentBox">
+				<div class="content">
+					<div class="content_1">
+						<p class="contentTit">
+							<b>工单管理</b>
+							<span>/</span>
+							<b>创建工单</b>
+						</p>
+						<div class="contentInfo">
+							<ul class="contentInfoList">
+								<li>
+									<span>故障车车牌号码</span>
+									<input type="text">
+								</li>
+
+								<li>
+									<span>故障车司机姓名</span>
+									<input type="text">
+								</li>
+
+								<li>
+									<span>故障车司机电话</span>
+									<input type="text">
+								</li>
+							</ul>
+						</div>
+						<div class="create_1">
+							<img src="../static/img/warning_1.png" class="createImg_1">
+							<span>该车一年内已经有过三次维修记录，不能享受免费服务</span>
+						</div>
+						<div class="create_2">
+							<span>服务区名称：长深高速浙江杭州兜庄服务点</span>
+							<a class="replace">服务点更换</a>
+						</div>
+						<div class="create_2">
+							<span>服务区联系人：王老板</span>
+						</div>
+						<div class="create_2">
+							<span>服务区联系电话：15268794259</span>
+							<img src="../static/img/warning_2.png" class="createImg_2">
+							<label>请先电话与服务点确认，再指派</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/libs/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		function imgCenter()
+		{
+			var imgMargin=($('#menuDiv_1_img').parent().width()-47)/2;
+			$('#menuDiv_1_img').css('margin-left',imgMargin);
+		}
+		imgCenter();
+		$(window).on('resize scroll',function(){
+			imgCenter();
+		});
+
+		$('.menuDiv').click(function(){
+			$(this).children('b').addClass('menuLine');
+			$(this).siblings().children('b').removeClass('menuLine')
+		});
+
+		$('.contentInfoList li:first-child').find('span').css('margin-left','0');
+		$('.contentInfoBut a:first-child').css('margin-right','0');
+		$('.contentTable li:first-child').css('color','#6dadff');
+		$('.contentTit b:last').css('border-bottom','2px #3e91fc solid');
+	})
+</script>
+</html>

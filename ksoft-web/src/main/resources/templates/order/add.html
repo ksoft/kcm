@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta charset="UTF-8">
+	<title>创建工单</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}"  type="text/css" href="../static/css/common.css">
+	<link rel="stylesheet" th:href="@{/css/gdgl.css}" type="text/css" href="../static/css/gdgl.css">
+</head>
+<body>
+	<div class="box">
+		<div th:replace="include/template :: leftNavi"></div>
+		<div class="right">
+			<div th:replace="include/template :: topBar"></div>
+			<div class="contentBox">
+				<div class="content">
+					<div class="content_1">
+						<p class="contentTit">
+							<b>工单管理</b>
+							<span>/</span>
+							<b>创建工单</b>
+						</p>
+						<div class="contentInfo">
+							<ul class="contentInfoList">
+								<li>
+									<span>故障车车牌号码</span>
+									<input type="text">
+								</li>
+
+								<li>
+									<span>故障车司机姓名</span>
+									<input type="text">
+								</li>
+
+								<li>
+									<span>故障车司机电话</span>
+									<input type="text">
+								</li>
+							</ul>
+						</div>
+						<div class="create_1">
+							<img th:src="@{/img/warning_1.png}" src="../static/img/warning_1.png" class="createImg_1">
+							<span>该车一年内已经有过三次维修记录，不能享受免费服务</span>
+						</div>
+						<div class="create_2">
+							<span>服务区名称：长深高速浙江杭州兜庄服务点</span>
+							<a class="replace">服务点更换</a>
+						</div>
+						<div class="create_2">
+							<span>服务区联系人：王老板</span>
+						</div>
+						<div class="create_2">
+							<span>服务区联系电话：15268794259</span>
+							<img th:src="@{/img/warning_2.png}" src="../static/img/warning_2.png" class="createImg_2">
+							<label>请先电话与服务点确认，再指派</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" th:src="@{/js/libs/jquery.min.js}" src="../static/js/libs/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		function imgCenter()
+		{
+			var imgMargin=($('#menuDiv_1_img').parent().width()-47)/2;
+			$('#menuDiv_1_img').css('margin-left',imgMargin);
+		}
+		imgCenter();
+		$(window).on('resize scroll',function(){
+			imgCenter();
+		});
+
+		$('.menuDiv').click(function(){
+			$(this).children('b').addClass('menuLine');
+			$(this).siblings().children('b').removeClass('menuLine')
+		});
+
+		$('.contentInfoList li:first-child').find('span').css('margin-left','0');
+		$('.contentInfoBut a:first-child').css('margin-right','0');
+		$('.contentTable li:first-child').css('color','#6dadff');
+		$('.contentTit b:last').css('border-bottom','2px #3e91fc solid');
+	})
+</script>
+</html>

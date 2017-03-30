@@ -1,0 +1,222 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu,img,b{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+input{border:none;outline:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body{font:12px/1.14 "Microsoft YaHei", "\5B8B\4F53", "Arial Narrow", HELVETICA;color:#333;outline:0}
+
+.bg{
+    width:100%;
+    height:1080px;
+    margin:0 auto;
+    background:url(../img/homePageBg.png) no-repeat;
+    background-size:cover;
+}
+
+.logo{
+    width:100%;
+    float:left;
+}
+.logo img{
+    width:205px;
+    height:75px;
+    float:right;
+    margin-top:15%;
+    margin-right:20%;
+    display:inline;
+    overflow:hidden;
+}
+
+.login{
+    width:620px;
+    height:430px;
+    float:right;
+    margin-top:36px;
+    margin-right:10%;
+    display:inline;
+    -moz-border-radius:35px;
+    -webkit-border-radius:35px;
+    border-radius:35px;
+    background:transparent;
+    background-color:rgba(255,255,255,0.5)
+}
+
+.loginBox{
+    width:330px;
+    margin:0 auto
+}
+
+.loginDiv{
+    width:328px;
+    height:44px;
+    float:left;
+    margin-top:42px;
+    border:1px #e0ecfb solid;
+    -moz-border-radius:35px;
+    -webkit-border-radius:35px;
+    border-radius:35px;
+}
+.loginDivB{
+    float:left;
+    margin-left:10px;
+    margin-top:10px;
+    display:inline;
+}
+.loginDivB img{
+    width:20px;
+    height:24px;
+    float:left;
+    overflow:hidden;
+}
+
+.loginDivInp{
+    width:280px;
+    height:44px;
+    float:left;
+    margin-left:10px;
+    display:inline;
+    line-height:44px;
+    color:#9198a1;
+    font-size:14px;
+    background:transparent;
+}
+.loginDivInp_1{
+    width:240px;
+}
+.loginDivInp_2{
+    width:100px;
+}
+
+.showpsd{
+    width:25px;
+    height:11px;
+    float:left;
+    margin-left:10px;
+    margin-top:16px;
+    display:inline;
+}
+
+.loginDivX{
+    width:100%;
+    float:left;
+    margin-top:42px;
+}
+.loginDivX_1{
+    width:148px;
+    height:44px;
+    float:left;
+    border:1px #e0ecfb solid;
+    -moz-border-radius:35px;
+    -webkit-border-radius:35px;
+    border-radius:35px;
+}
+.loginDivX_2 {
+    margin-right: 106px;
+    margin-top: -6px;
+    width: 69px;
+    height: 24px;
+    float: right;
+    /* margin-top: 10px; */
+    color: #9198a1;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    -moz-border-radius: 35px;
+    -webkit-border-radius: 35px;
+    border-radius: 35px;
+    background: #ededed;
+    cursor: pointer;
+}
+
+.prompt{
+    width:100%;
+    height:30px;
+    float:left;
+    margin-top:10px;
+    text-align:center;
+    color:#ff5c5c;
+    font-size:14px;
+    line-height:30px
+}
+
+.next{
+    width:100%;
+    height:17px;
+    float:left;
+    margin-top:10px;
+    line-height:17px;
+    color:#147bff;
+}
+.next b{
+    width:17px;
+    height:17px;
+    float:left;
+    margin-left:20px;
+    display:inline;
+    background:url(../img/dg_1.png) no-repeat;
+    cursor:pointer;
+}
+.next b.next_1{
+    background:url(../img/dg_2.png) no-repeat;
+}
+.next_2{
+    float:left;
+    margin-left:10px;
+    display:inline;
+    font-size:12px;
+}
+.next_3{
+    float:right;
+    margin-right:20px;
+    display:inline;
+    font-size:12px;
+    cursor:pointer;
+}
+
+.sign{
+    width:100%;
+    height:54px;
+    float:left;
+    margin-top:10px;
+    font-size:14px;
+    line-height:54px;
+    text-align:center;
+    -moz-border-radius:35px;
+    -webkit-border-radius:35px;
+    border-radius:35px;
+    cursor:pointer;
+    color:#fff;
+    background:#58a1ff;
+    font-size:18px;
+}
+a:hover.sign{
+    background:#58a1ff
+}
+a:active.sign{
+    background:#58a1ff
+}
+
+.copy{
+    width:100%;
+    position:absolute;
+    top:1040px;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+}
+.hide{
+    display: none;
+}

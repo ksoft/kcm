@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="renderer" content="webkit" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/gdgl.css">
+</head>
+<body>
+	<div class="box">
+		<div class="left">
+			<a href="" class="logo"><img src="../static/img/logo_1.png"></a>
+			<div class="menuDiv menuDiv_1">
+				<b></b>
+				<div class="menuDiv_1_div">
+					<p><img src="../static/img/gdgl.png" id="menuDiv_1_img"><b></b></p>
+					<span class="menuDiv_2_span">工单管理</span>
+				</div>
+			</div>
+			<div class="menuDiv menuDiv_2">
+				<b class="menuLine"></b>
+				<span class="menuDiv_2_span">创建工单</span>
+			</div>
+		</div>
+		<div class="right">
+			<div class="top">
+				<span class="signOut">退出</span>
+				<span class="myName">测试测试</span>
+				<img src="../static/img/default.jpg" class="myNamePic">
+				<div class="bell">
+					<span>12</span>
+				</div>
+				<span class="welcome">欢迎登录中策云 高速救援客服平台</span>
+			</div>
+			<div class="contentBox">
+				<div class="content">
+					<div class="content_1">
+						<p class="contentTit">
+							<b>工单管理</b>
+							<span>/</span>
+							<b>创建工单</b>
+						</p>
+						<div class="createPop">
+							<div class="createPop_1">
+								<span class="createPop_1_1">服务类型</span>
+								<img src="../static/img/redRound.png" class="createPop_1_2">
+								<span class="createPop_1_3">自行前往服务区</span>
+								<img src="../static/img/blueRound.png" class="createPop_1_2">
+								<span class="createPop_1_3">上路维修</span>
+								<div class="createPop_1_4">
+									<input type="text">
+									<img src="../static/img/sousou.png">
+								</div>
+							</div>
+							<div class="createPop_2">
+								<img src="../static/img/map.png" class="createPopMap">
+								<div class="createPop_2_1">
+									<img src="../static/img/r_2.png">
+									<span>签约服务点</span>
+									<img src="../static/img/r_1.png">
+									<span>尚未签约</span>
+								</div>
+								<!-- <div class="myPop">
+									<div class="myPop_1">长深高速浙江杭州兜庄服务点</div>
+									<div class="myPop_2">
+										<ul class="myPopUl">
+											<li>
+												<img src="../static/img/r_3.png">
+												<span>南向北去</span>
+											</li>
+											<li>
+												<img src="../static/img/r_4.png">
+												<span>北向南去</span>
+											</li>
+											<li>
+												<img src="../static/img/r_5.png">
+												<span>王先生</span>
+											</li>
+											<li>
+												<img src="../static/img/r_6.png">
+												<span>15865487852</span>
+											</li>
+										</ul>
+										<a class="zhipai">指派</a>
+									</div>
+								</div> -->
+								<!-- <div class="myPop">
+									<div class="myPop_1">奥123456789</div>
+									<div class="myPop_2">
+										<ul class="myPopUl">
+											<li>
+												<img src="../static/img/r_5.png">
+												<span>王先生</span>
+											</li>
+											<li>
+												<img src="../static/img/r_6.png">
+												<span>15865487852</span>
+											</li>
+										</ul>
+										<a class="zhipai">指派</a>
+										<p class="myPopInfo">
+											<img src="../static/img/warning_1.png">
+											<span>请先电话与服务点确认，再指派</span>
+										</p>
+									</div>
+								</div> -->
+								<div class="myPop">
+									<div class="myPop_1">长深高速浙江杭州兜庄服务点</div>
+									<div class="myPop_2">
+										<img src="../static/img/car.png" class="myPopCar">
+										<p class="myPopWu">暂无签约</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/libs/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		function imgCenter()
+		{
+			var imgMargin=($('#menuDiv_1_img').parent().width()-47)/2;
+			$('#menuDiv_1_img').css('margin-left',imgMargin);
+		}
+		imgCenter();
+		$(window).on('resize scroll',function(){
+			imgCenter();
+		});
+
+		$('.menuDiv').click(function(){
+			$(this).children('b').addClass('menuLine');
+			$(this).siblings().children('b').removeClass('menuLine')
+		});
+
+		$('.contentInfoList li:first-child').find('span').css('margin-left','0');
+		$('.contentInfoBut a:first-child').css('margin-right','0');
+		$('.contentTable li:first-child').css('color','#6dadff');
+		$('.contentTit b:last').css('border-bottom','2px #3e91fc solid');
+	})
+</script>
+</html>

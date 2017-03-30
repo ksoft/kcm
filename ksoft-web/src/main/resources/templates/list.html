@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script th:src="@{/js/libs/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{/js/libs/bootstrap.min.js}" type="text/javascript"></script>
+    <title>工单管理</title>
+</head>
+<body>
+    <p th:text="${staticPath}">11</p>
+    <div class="col-sm-9">
+       状态：<select name="orderStatus">
+            <option value="">	所有</option>
+            <option value="NOT_AUDIT">	未审核</option>
+            <option value="PASSED">	待服务</option>
+            <option value="DENY">	已拒绝</option>
+            <option value="COMPLETE">	已完成</option>
+            <option value="CANCELED">	已取消</option>
+        </select>
+        地区：
+        <select name="region" >
+            <option th:each="p:${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
+        </select>
+    <table id="order-list"   class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>工单编号</td>
+                    <td>工单时间</td>
+                    <td>故障维修区域</td>
+                    <td>事故车车牌号</td>
+                    <td>事故车司机</td>
+                    <td>事故车司机电话</td>
+                    <td>名称/车牌</td>
+                    <td>服务区（车）联系人</td>
+                    <td>相关客服</td>
+                    <td>订单来源</td>
+                    <td>工单状态</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order:${orders.content}">
+                    <td th:text="${orderStat.count}">编号</td>
+                    <td th:text="${order.sn}">工单编号</td>
+                    <td th:text="${#dates.format(order.createTime,'yyyy-MM-dd HH:mm:ss')}">工单时间</td>
+                    <td th:text="${order.serviceRegion}">故障维修区域</td>
+                    <td th:text="${order.plateNum}">事故车车牌号</td>
+                    <td th:text="${order.driverName}">事故车司机</td>
+                    <td th:text="${order.driverPhone}">事故车司机电话</td>
+                    <td th:text="${order.plateNum}">名称/车牌</td>
+                    <td>服务区（车）联系人</td>
+                    <td>相关客服</td>
+                    <td>订单来源</td>
+                    <td  ><div class="label  label-success" th:text="${order.orderStatus.description}"></div></td>
+                    <td>操作</td>
+                </tr>
+            </tbody>
+    </table>
+    </div>
+</body>
+</html>

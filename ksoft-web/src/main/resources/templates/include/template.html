@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+<div th:fragment="leftNavi" class="left">
+    <a href="" class="logo"><img th:src="@{/img/logo_1.png}" src="../static/img/logo_1.png"></a>
+    <div class="menuDiv menuDiv_1">
+        <b></b>
+        <a th:href="@{/orders}" class="menuDiv_1_div">
+            <p><img th:src="@{/img/gdgl.png}" src="../static/img/gdgl.png" id="menuDiv_1_img"><b></b></p>
+            <span class="menuDiv_2_span">工单管理</span>
+        </a>
+    </div>
+    <a th:href="@{/order/add}" class="menuDiv menuDiv_2">
+        <b></b>
+        <span class="menuDiv_2_span">创建工单</span>
+    </a>
+</div>
+
+<div th:fragment="topBar" class="top">
+    <span class="signOut">退出</span>
+    <span class="myName">测试测试</span>
+    <img th:src="@{/img/default.jpg}" src="../static/img/default.jpg" class="myNamePic">
+    <!--<div class="bell">-->
+        <!--<span>12</span>-->
+    <!--</div>-->
+    <span class="welcome">欢迎登录中策云 高速救援客服平台</span>
+</div>
+</body>
+</html>
+
