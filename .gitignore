@@ -1,1 +1,15 @@
-test2
+.idea/*
+.settings/*
+.project
+
+*.iml
+target/*
+.classpath
+
+ksoft-web/*.iml
+ksoft-web/target
+ksoft-service/*.iml
+ksoft-service/target
+ksoft-common/*.iml
+ksoft-common/target
+/.idea
