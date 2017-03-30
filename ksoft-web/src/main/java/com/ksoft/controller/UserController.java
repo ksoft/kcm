@@ -30,10 +30,6 @@ public class UserController {
         return userInfo;
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(){
-        return "login";
-    }
 
     @RequestMapping(value = "/getAuth",method = RequestMethod.GET)
     @PreAuthorize("hasRole('ADMIN')")

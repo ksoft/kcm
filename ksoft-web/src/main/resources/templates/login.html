@@ -1,156 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>高速救援--登陆</title>
-	<link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" href="../static/css/login.css">
+	<meta content="text/html;charset=UTF-8"/>
+	<title>登录页面</title>
+	<link rel="stylesheet" th:href="@{css/bootstrap.min.css}"/>
+	<style type="text/css">
+		body {
+			padding-top: 50px;
+		}
+		.starter-template {
+			padding: 40px 15px;
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
-	<div class="bg">
-		<h1 class="logo"><a href=""><img th:src="@{/img/logo.png}" src="../static/img/logo.png"></a></h1>
-		<div class="login">
-			<div class="loginBox">
-				<div class="loginDiv">
-					<b class="loginDivB"><img th:src="@{/img/user.png}" src="../static/img/user.png"></b>
-					<input type="text" name="username" class="loginDivInp" value="请输入账号" id="user">
-				</div>
 
-				<div class="loginDiv">
-					<b class="loginDivB"><img th:src="@{/img/psd.png}" src="../static/img/psd.png"></b>
-					<input type="password" name="password" class="loginDivInp loginDivInp_1" placeholder="请输入登录密码" id="psd">
-					<img th:src="@{/img/showpsd.png}" src="../static/img/showpsd.png" class="showpsd">
-				</div>
-
-				<div class="loginDivX">
-					<div class="loginDivX_1">
-						<b class="loginDivB"><img th:src="@{/img/yzm.png}" src="../static/img/yzm.png"></b>
-						<input id="valid-code" type="text" class="loginDivInp loginDivInp_2" placeholder="请输入验证码" >
-					</div>
-					<div  class="loginDivX_2"><img class="verify-code" th:src="@{/img/code}" src="" alt="验证码" title="点击更换验证码"></div>
-				</div>
-
-				<div th:text="${message}" class="prompt err-msg">帐号或密码输入错误</div>
-
-				<div class="next">
-					<b class="next_1" id="rem-me"></b>
-					<span class="next_2">下次自动登录</span>
-					<span  class="next_3 verify-code">点击可更换验证码</span>
-				</div>
-
-				<a class="sign">登录</a>
-			</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Spring Security演示</a>
 		</div>
-		<p class="copy">©2016 Chekongjian Inc. All Rights Reserved.</p>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a th:href="@{/}"> 首页 </a></li>
+
+			</ul>
+		</div><!--/.nav-collapse -->
 	</div>
+</nav>
+<div class="container">
+
+	<div class="starter-template">
+		<p th:if="${param.logout}" class="bg-warning">已成功注销</p><!-- 1 -->
+		<p th:if="${param.error}" class="bg-danger">有错误，请重试</p> <!-- 2 -->
+		<h2>使用账号密码登录</h2>
+		<form name="form" th:action="@{/auth}" action="/auth" method="POST"> <!-- 3 -->
+			<div class="form-group">
+				<label for="username">账号</label>
+				<input type="text" class="form-control" name="username" value="" placeholder="账号" />
+			</div>
+			<div class="form-group">
+				<label for="password">密码</label>
+				<input type="password" class="form-control" name="password" placeholder="密码" />
+			</div>
+			<input type="submit" id="login" value="Login" class="btn btn-primary" />
+		</form>
+	</div>
+</div>
 </body>
-<script type="text/javascript" th:src="@{/js/libs/jquery.min.js}" src="../static/js/libs/jquery.min.js"></script>
-<script type="text/javascript" th:src="@{/js/libs/jquery.md5.js}" src="../static/js/libs/jquery.min.js"></script>
-<script type="text/javascript" th:src="@{/js/libs/jquery.cookie.js}" src="../static/js/libs/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('.next b').click(function(){
-			$(this).toggleClass('next_1')
-		});
-		$('.copy').css('margin-top','my_height');
-		$('.showpsd').click(function(){
-			if($('#psd').attr('type')=='password')
-			{
-				$('#psd').attr('type','text')
-			}
-			else{
-				$('#psd').attr('type','password')
-			}
-		})
-
-		$('#user').focus(function(){
-			var text_val=$(this).val();
-			if(text_val=='请输入账号')
-			{
-				$(this).val('');
-			}
-		});
-		$('#user').blur(function(){
-			var text_val=$(this).val();
-			if(text_val=='')
-			{
-				$(this).val('请输入账号');
-			}
-		});
-
-		$('#psd').focus(function(){
-			var text_val=$(this).val();
-			if(text_val=='请输入登录密码')
-			{
-				$(this).val('');
-			}
-		});
-		$('#psd').blur(function(){
-			var text_val=$(this).val();
-			if(text_val=='')
-			{
-				$(this).val('请输入登录密码');
-			}
-		});
-
-		$('#yzm').focus(function(){
-			var text_val=$(this).val();
-			if(text_val=='请输入验证码')
-			{
-				$(this).val('');
-			}
-		});
-		$('#yzm').blur(function(){
-			var text_val=$(this).val();
-			if(text_val=='')
-			{
-				$(this).val('请输入验证码');
-			}
-		});
-		$("a.sign").click(function () {
-		    var rem = "off";
-			if($("b#rem-me").hasClass("next_1")){
-			    rem = "on";
-			}
-			if($("input#valid-code").val().trim()==''){
-				alert("验证码为空");
-                return;
-			}
-			if($("input[name='username']").val().trim()==''){
-			    alert("请输入用户名");
-                return;
-			}
-			if($("input[name='password']").val().trim()==''){
-			    alert("请输入密码");
-			    return;
-			}
-			var data={
-			    username:$("input[name='username']").val(),
-			    password:$.md5($("input[name='password']").val()),
-                remember:rem,
-                code:$("input#valid-code").val()
-			};
-			$.ajax({
-			    url:"/auth/login",
-				type:'post',
-				data:data,
-				success:function (result) {
-					if(result.success){
-					    alert(result.message);
-					    window.location.href="/";
-					}else {
-					    $("div.err-msg").text(result.message);
-					    refreshCode();
-					}
-                }
-			})
-        });
-        $(".verify-code").click(function(){
-            refreshCode();
-        });
-	})
-
-	function refreshCode() {
-        $("img.verify-code").attr("src","/img/code?timestamp="+new Date().getTime());
-    }
-</script>
 </html>

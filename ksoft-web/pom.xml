@@ -35,6 +35,9 @@
 				<configuration><!-- 指定该Main Class为全局的唯一入口 -->
 					<mainClass>com.ksoft.KsoftWebApplication</mainClass>
 					<layout>ZIP</layout>
+					<jvmArguments><!--开启debug -->
+						-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
+					</jvmArguments>
 				</configuration>
 				<executions>
 					<execution>
