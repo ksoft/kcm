@@ -11,6 +11,12 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/ksoft
     driver-class-name: com.mysql.jdbc.Driver
 
+#mvc
+  mvc:
+    view:
+      suffix: .html
+
+
   redis:
     host: 171.188.0.166
     port: 6379
