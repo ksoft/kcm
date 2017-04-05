@@ -22,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/getUserInfo",method = RequestMethod.GET)
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('ROLE_admin')")
     public AdmUser getUserInfo(AdmUser user){
         AdmUser userInfo = new AdmUser();
         userInfo.setUser_name("LIQIN");
@@ -32,7 +32,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/getAuth",method = RequestMethod.GET)
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     public AdmUser getAuth(AdmUser user){
         AdmUser userInfo = new AdmUser();
         //userInfo.setUserName("LIQIN");

@@ -26,7 +26,4 @@ public class AdmUser implements Serializable{
     private String password;
     @Column(name = "ROLE_CODE")
     private String role_code;
-
-    @OneToMany(mappedBy = "role_code")
-    private List<AdmRole> roles;
 }

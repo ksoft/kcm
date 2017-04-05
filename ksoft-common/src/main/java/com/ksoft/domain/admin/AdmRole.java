@@ -21,5 +21,4 @@ public class AdmRole implements Serializable {
     private String role_code;
     @Column(name = "ROLE_NAME")
     private String role_name;
-
 }
